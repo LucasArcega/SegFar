@@ -1,0 +1,80 @@
+	<h4>{{pagina}}</h4>	
+	<form action="">
+
+		<div ng-show="dadosPessoais" class="dadosPessoais">
+			
+			<div class="input-field col m6 s12">
+				<label for="nomeCompleto">Nome Completo</label>
+				<input id="nomeCompleto" type="text" class="">
+			</div>
+			
+			<div class="input-field col m6 s12">
+				<label for="nascimento">Data de nascimento</label>
+				<input type="text"  id="nascimento" class="">
+			</div>
+
+			<div class="input-field col m6 s12">
+				<select class="" name="raca" id="raca">
+					<option value="">Selecione</option>
+					<option value="Branca">Branca</option>
+					<option value="Indígena">Indígena</option>
+					<option value="Negra">Negra</option>
+					<option value="Pardo">Pardo</option>
+				</select>
+				<label for="raca">Raça</label>
+			</div>	
+
+			<div class="input-field col m6 s12">
+				<input name="cep" id="cep" type="text">
+				<label for="cep">Cep</label>
+			</div>
+
+			<div class="input-field col m6 s12">
+				<select class="estado" name="estado" id="estado">
+					<option value="">Selecione</option>
+					<option value="Estado">Estado</option>
+				</select>
+				<label for="estado">Estado</label>
+			</div>
+
+
+			<div class="input-field col m6 s12">
+				<select class="" name="cidade" id="cidade">
+					<option value="">Selecione</option>
+					<option value="cidade">Cidade</option>
+					<label for="cidade">Cidade</label>
+				</select>
+			</div>
+
+			<div class="input-field col m6 s12">
+				<input type="text" name="bairro" id="bairro">
+				<label for="bairro">Bairro</label>
+			</div>
+
+			<div class="input-field col m6 s12">
+				<input type="text" id="rua" name="rua">
+				<label for="rua">Rua</label>
+			</div>
+		
+		</div>
+
+		<div class="contato" ng-show="contato">			
+			<div class="input-field col m6 s12">
+				<input type="text" id="telefoneResidencial" name="telefoneResidencial">
+				<label for="telefoneResidencial">Telefone residêncial</label>
+			</div>
+
+			<div class="input-field col m6 s12">
+				<input type="text" id="telefoneCeluluar" name="telefoneCeluluar">
+				<label for="telefoneCeluluar">Telefone Celular</label>
+			</div>
+
+			<div class="input-field col m6 s12">
+				<input type="text" id="email" name="email">
+				<label for="email">E-mail</label>
+			</div>
+
+		</div>
+		
+	</form>	
+

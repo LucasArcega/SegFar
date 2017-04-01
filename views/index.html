@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário de cadastro</title>
+	<link rel="stylesheet" href="../css/materialize.min.css">
+	<link rel="stylesheet" href="../css/estilo.css">
+	<meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+
+<body ng-app="app">
+	
+	<navBar>
+	</navBar>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h4>Novo registro</h3>
+				<h5>Seção de:{{pagina}}</sub>
+				<form action="">
+					<div class="input-field col m6 s12">
+						<label for="nomeCompleto">Nome Completo</label>
+						<input id="nomeCompleto" type="text" class="">
+					</div>
+					
+					<div class="input-field col m6 s12">
+						<label for="nasacimento">Data de nascimento</label>
+						<input type="text"  id="nascimento" class="form-control">
+					</div>
+
+					<div class="input-field col m6 s12">
+						<select class="" name="raca" id="raca">
+							<option value="">Selecione</option>
+							<option value="Branca">Branca</option>
+							<option value="Indígena">Indígena</option>
+							<option value="Negra">Negra</option>
+							<option value="Pardo">Pardo</option>
+						</select>
+						<label for="raca">Raça</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../scripts/angular.js" type="text/javascript"></script>
+<script src="../scripts/jquery.js"></script>
+<script src="../js/materialize.js" type="text/javascript"></script>
+<script src="../scripts/jquery.maskedinput.min.js"></script>
+
+<script src="../app.js" type="text/javascript"></script>
+<script src="../controllers/navbarController.js" type="text/javascript"></script>
+
+<script>
+	$(document).ready(function(){
+		$('#nascimento').material_datepicker();
+		$('select').material_select();
+		 $(".button-collapse").sideNav();
+	});
+</script>
+
+</html>

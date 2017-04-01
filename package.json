@@ -1,0 +1,19 @@
+{
+  "name": "aeds",
+  "version": "1.0.0",
+  "description": "a�gência experimental de desenvolvimento de software: segfar",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Arcega",
+  "license": "ISC"
+}
