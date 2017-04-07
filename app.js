@@ -5,12 +5,12 @@
 
 	app.config(function($stateProvider,$urlRouterProvider) {
 
-		$urlRouterProvider.otherwise('/home');
+		$urlRouterProvider.otherwise('/farmaceutico');
 
  		$stateProvider.
  			state("home",{
- 				url:"/home",
- 				templateUrl:"views/home.html"
+ 				url:"/login",
+ 				templateUrl:"views/login.html"
  			});
 	});
 

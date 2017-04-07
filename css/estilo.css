@@ -51,3 +51,23 @@ label{
 	color: rgb(100,100,100);
 	font-size: 24px;
 }
+
+
+.texto-basico{
+	font-size: large;
+	color: #333333;
+}
+
+.login-box{
+	margin-top: 80px;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-bottom: 1px solid #fdff83;
+    box-shadow: 0 1px 0 0 #fff18f;
+
+}
+
+.dropdown-content li>a, .dropdown-content li>span { 
+    color: #ff9b00; 
+}
