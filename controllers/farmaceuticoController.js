@@ -1,16 +1,16 @@
 (function(){
 
 	angular.
-	module('farmaceutico',['ui.router']).	
-	controller("farmaceuticoCtlr", function ($scope, $rootScope) {			
+	module('farmaceutico',['ui.router']).
+	controller("farmaceuticoCtlr", function ($scope, $rootScope) {
 		$scope.form = [];
 		$scope.pagina= "farmaceutico";
 		$scope.nome = "João";
-		
+
 		$scope.form['dadosPessoais'] = true;
 		$scope.form['contato'] = false;
 
-		
+
 		$scope.formNumber =[];
 		$scope.formNumber[0] = "dadosPessoais";
 		$scope.formNumber[1] = "contato";
@@ -21,19 +21,19 @@
 
 			for(var viewPage in $scope.form){
 				$scope.form[viewPage] = false;
-			}			
+			}
 			if(next == true) {
 				$scope.atual++;
 			}
 			else{
-				$scope.atual--;	
+				$scope.atual--;
 			}
 			$scope.form[$scope.formNumber[$scope.atual]] = true;
 		}
 
 	}).
 	config(function($stateProvider) {
-  		$stateProvider.state('farmaceutico', {
+  		$stateProvider.state('homeFarmaceutico', {
   			url:'/farmaceutico',
     		templateUrl: 'views/farmaceutico/homeFarmaceutico.html',
     		controller: 'farmaceuticoCtlr'

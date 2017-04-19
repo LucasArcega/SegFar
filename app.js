@@ -7,11 +7,11 @@
 
 		$urlRouterProvider.otherwise('/farmaceutico');
 
- 		$stateProvider.
- 			state("home",{
- 				url:"/login",
- 				templateUrl:"views/login.html"
- 			});
+	 		$stateProvider.
+	 			state("home",{
+	 				url:"/login",
+	 				templateUrl:"views/login.html"
+	 			});
 	});
 
 })();
