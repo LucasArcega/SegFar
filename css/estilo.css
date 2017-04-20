@@ -14,7 +14,7 @@ label{
 }
 
 .navbar{
-	background-color: #ecd56c;
+	background-color: #8e855e;
 	color: #bbbbbb;
 }
 
@@ -67,13 +67,12 @@ label{
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-        border-bottom: 1px solid #fdff83;
-    box-shadow: 0 1px 0 0 #fff18f;
-
+        border-bottom: 1px solid #83c0ff;
+        box-shadow: 0 1px 0 0 #009fff;
 }
 
 .dropdown-content li>a, .dropdown-content li>span {
-    color: #ff9b00;
+    color: #0078d0;
 }
 
 .side-nav{
@@ -91,6 +90,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
 .sidebar-menu li{
 	display: block;
+}
+
+.waves-effect.waves-blue .waves-ripple {
+     
+	background-color: #0098ff;
 }
 
 @media (min-width: 993px) {

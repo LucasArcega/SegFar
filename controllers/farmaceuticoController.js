@@ -17,6 +17,13 @@
 
 		$scope.atual = 0;
 
+		$scope.formViewSet = function(view){
+			for(var viewPage in $scope.form){
+				$scope.form[viewPage] = false;
+			}
+			$scope.form[view] = true;			
+		}
+
 		$scope.formView = function(next){
 
 			for(var viewPage in $scope.form){

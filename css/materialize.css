@@ -1428,7 +1428,7 @@
 }
 
 .yellow {
-  background-color: #ffeb3b !important;
+  background-color: #3b71ff !important;
 }
 
 .yellow-text {
@@ -1476,7 +1476,7 @@
 }
 
 .yellow.darken-1 {
-  background-color: #fdd835 !important;
+  background-color: #0091d2 !important;
 }
 
 .yellow-text.text-darken-1 {
@@ -1508,7 +1508,7 @@
 }
 
 .yellow.accent-1 {
-  background-color: #ffff8d !important;
+  background-color: #00b0ff !important;
 }
 
 .yellow-text.text-accent-1 {
@@ -6972,7 +6972,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav li.active {
-  background-color: rgba(245, 249, 0, 0.15);
+  background-color: rgba(80, 197, 249, 0.17);
 }
 
 .side-nav a {
@@ -8320,7 +8320,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .picker__date-display {
   text-align: center;
-  background-color: #26a69a;
+  background-color: #42b3ff;
   color: #fff;
   padding-bottom: 15px;
   font-weight: 300;
@@ -8334,7 +8334,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .picker__weekday-display {
-  background-color: #1f897f;
+  background-color: #26a7ff;
   padding: 10px;
   font-weight: 200;
   letter-spacing: .5;
@@ -8400,7 +8400,7 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 50%;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
-  background-color: #26a69a;
+  background-color: #ffb000;
   color: #ffffff;
 }
 

@@ -1,8 +1,25 @@
 	
-<div class="container">
-	<div class="row">
-		<div class="col s12">
-		
+<div class="row">
+	<ul id="sidebar" class="side-nav fixed">
+      <li class="titulo"><h5>Segmento Farmacoterpeutico</h5></li>
+      <li class="no-padding">
+    		<ul class="collapsible" data-collapsible="accordion" watch>
+        		
+        		<li>
+            		<div class="collapsible-header active waves-effect waves-blue" watch>Novo Paciente</div>
+            		<div class="no-padding collapsible-body">
+                    <ul class="sidebar-menu">
+                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('dadosPessoais')">Dados pessoais</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('contato')">Contato</a></li>
+                    	<li class="block waves-effect waves-blue"><a href="#"></a></li>
+                  	</ul>
+                </div>
+        		</li>
+    		</ul>
+      </li>
+  </ul>
+
+	<div class="main col l8 s12">		
 		<h4>Novo Paciente</h4>	
 		<br>
 		<form action="">
@@ -15,7 +32,7 @@
 				
 				<div class="input-field col m6 s12">
 					<label for="nascimento">Data de nascimento</label>
-					<input type="text"  id="nascimento" class="">
+					<input type="text" input-date ng-model="nascimento" id="nascimento" class="">
 				</div>
 
 				<div class="input-field col m6 s12">
@@ -123,6 +140,5 @@
 				<button ng-click="formView(true)" ng-disabled="form['contato']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>	
 			</div>
 		</div>
-	</div>
 	</div>
 </div>
