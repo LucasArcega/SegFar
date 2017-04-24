@@ -15,7 +15,7 @@ label{
 
 .navbar{
 	background-color: #8e855e;
-	color: #bbbbbb;
+	/* color: #bbbbbb; */
 }
 
 .pagina{
@@ -41,6 +41,9 @@ label{
 
 .navbar{
 	border: none;
+	position: fixed;
+	top:0;
+	z-index:1000;
 }
 
 .main{
@@ -76,11 +79,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 }
 
 .side-nav{
-	margin-top: 65px;
 	box-shadow: 2px 0px 5px #888888;
 }
 
 .side-nav .titulo{
+	color: black;
 	padding-left: 10px;
 }
 
@@ -93,8 +96,22 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 }
 
 .waves-effect.waves-blue .waves-ripple {
-     
+
 	background-color: #0098ff;
+}
+
+.conteudo{
+	margin-top: 70px;
+}
+
+.collapsible-header{
+	color: black;
+}
+@media (min-width: 993px) {
+	.side-nav{
+		margin-top: 65px;
+		box-shadow: 2px 0px 5px #888888;
+	}
 }
 
 @media (min-width: 993px) {

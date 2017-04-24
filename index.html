@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="segFar" lang="pt-br">
 <head>
 	<meta charset="UTF-8">
@@ -10,24 +10,21 @@
 	<meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-	<nav ng-controller="NavCtlr" class="navbar blue lighteen-1 top-nav-collapse navbar-fixed-top">
-	    <div class="nav-wrapper">
-			<a class="brand-logo center">{{titulo}}</a>
-		    <a data-sidenav="left" data-menuwidth="300" data-closeonclick="true" data-activates="sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
+	<nav class="navbar blue lighteen-1 top-nav-collapse navbar-fixed-top">
+		<div class="nav-wrapper">
+			<a class="brand-logo center">SegFar</a>
+		  <a data-sidenav="left" data-menuwidth="300" data-closeonclick="true" data-activates="sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
 
-		<div class="side-nav" id="sidebar">
-			<span>{{titulo}}</span>
-			<ul >
-				<li><a href="#/paciente">Área do Paciente</a></li>
-				<li><a href="#/listarPacientes">Área do Farmaceutico</a></li>
-			</ul>
+			<div class="side-nav" id="sidebar">
+				<div ui-view="sidebar-mobile">
+
+				</div>
+			</div>
 		</div>
-
-	    </div>
 	</nav>
 
-	<ui-view>
-	</ui-view>
+	<div class="conteudo" ui-view="main">
+	</div>
 
 </body>
 

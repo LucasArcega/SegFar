@@ -1,10 +1,8 @@
-	
 <div class="row">
 	<ul id="sidebar" class="side-nav fixed">
       <li class="titulo"><h5>Segmento Farmacoterpeutico</h5></li>
       <li class="no-padding">
     		<ul class="collapsible" data-collapsible="accordion" watch>
-        		
         		<li>
             		<div class="collapsible-header active waves-effect waves-blue" watch>Novo Paciente</div>
             		<div class="no-padding collapsible-body">
@@ -17,26 +15,26 @@
         		</li>
     		</ul>
       </li>
-  </ul>
+  	</ul>
 
-	<div class="main col l8 s12">		
-		<h4>Novo Paciente</h4>	
+	<div class="main col l8 s12">
+		<h4>Novo Paciente</h4>
 		<br>
 		<form action="">
 			<div ng-show="form['dadosPessoais']" class="dadosPessoais">
-				
+
 				<div class="input-field col m6 s12">
 					<label for="nomeCompleto">Nome Completo</label>
 					<input id="nomeCompleto" type="text" class="">
 				</div>
-				
+
 				<div class="input-field col m6 s12">
 					<label for="nascimento">Data de nascimento</label>
 					<input type="text" input-date ng-model="nascimento" id="nascimento" class="">
 				</div>
 
 				<div class="input-field col m6 s12">
-					
+
 					<select class="" name="raca" material-select id="raca">
 						<option value="">Selecione</option>
 						<option value="Branca">Branca</option>
@@ -45,15 +43,14 @@
 						<option value="Pardo">Pardo</option>
 					</select>
 					<label for="raca">Raça</label>
-				</div>	
-
-				<div class="input-field col m6 s12">
-					<label for="cep">Cep</label>
-					<input name="cep" id="cep" type="text">					
 				</div>
 
 				<div class="input-field col m6 s12">
-					
+					<label for="cep">Cep</label>
+					<input name="cep" id="cep" type="text">
+				</div>
+
+				<div class="input-field col m6 s12">
 					<select class="estado" name="estado" material-select id="estado">
 						<option value="">Selecione</option>
 						<option value="AC">Acre</option>
@@ -87,12 +84,11 @@
 					<label for="estado">Estado</label>
 				</div>
 
-
 				<div class="input-field col m6 s12">
-					
+
 					<select material-select class="" name="cidade" id="cidade">
 						<option value="">Selecione</option>
-						<option value="cidade">Cidade</option>						
+						<option value="cidade">Cidade</option>
 					</select>
 					<label for="cidade">Cidade</label>
 				</div>
@@ -100,44 +96,34 @@
 				<div class="input-field col m6 s12">
 					<label for="bairro">Bairro</label>
 					<input type="text" name="bairro" id="bairro">
-					
 				</div>
 
 				<div class="input-field col m6 s12">
 					<label for="rua">Rua</label>
 					<input type="text" id="rua" name="rua">
-					
 				</div>
-			
 			</div>
-
-			<div class="contato" ng-show="form['contato']">			
+			<div ng-show="form['contato']"  class="contato">
 				<div class="input-field col m6 s12">
 					<label for="telefoneResidencial">Telefone residêncial</label>
 					<input type="text" id="telefoneResidencial" name="telefoneResidencial">
-					
 				</div>
-
 				<div class="input-field col m6 s12">
 					<label for="telefoneCeluluar">Telefone Celular</label>
 					<input type="text" id="telefoneCeluluar" name="telefoneCeluluar">
-					
 				</div>
-
 				<div class="input-field col m6 s12">
 					<label for="email">E-mail</label>
 					<input type="text" id="email" name="email">
-					
 				</div>
-
 			</div>
-			
-		</form>	
+
+		</form>
 
 		<div class="col s12">
 			<div class="right">
 				<button ng-click="formView(false)" ng-disabled="form['dadosPessoais']" class="btn yellow waves-effect waves-light darken-1">Anterior</button>
-				<button ng-click="formView(true)" ng-disabled="form['contato']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>	
+				<button ng-click="formView(true)" ng-disabled="form['contato']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>
 			</div>
 		</div>
 	</div>

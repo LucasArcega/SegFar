@@ -1,33 +1,26 @@
 (function(){
-
 	angular.
 	module('farmaceutico',['ui.router']).
 	controller("farmaceuticoCtlr", function ($scope, $rootScope) {
-		$scope.form = [];
-		$scope.pagina= "farmaceutico";
-		$scope.nome = "João";
-
-		$scope.form['dadosPessoais'] = true;
-		$scope.form['contato'] = false;
-
-
-		$scope.formNumber =[];
-		$scope.formNumber[0] = "dadosPessoais";
-		$scope.formNumber[1] = "contato";
-
-		$scope.atual = 0;
-
+		$rootScope.form={
+			dadosPessoais: true,
+			contato: false
+		};
+		$rootScope.formNumber = {
+			0:'dadosPessoais',
+			1:'contato'
+		}
 		$scope.formViewSet = function(view){
-			for(var viewPage in $scope.form){
-				$scope.form[viewPage] = false;
+			for(var viewPage in $rootScope.form){
+				$rootScope.form[viewPage] = false;
 			}
-			$scope.form[view] = true;			
+			$rootScope.form[view] = true;
 		}
 
 		$scope.formView = function(next){
 
-			for(var viewPage in $scope.form){
-				$scope.form[viewPage] = false;
+			for(var viewPage in $rootScope.form){
+				$rootScope.form[viewPage] = false;
 			}
 			if(next == true) {
 				$scope.atual++;
@@ -35,21 +28,35 @@
 			else{
 				$scope.atual--;
 			}
-			$scope.form[$scope.formNumber[$scope.atual]] = true;
+			$rootScope.form[$rootScope.formNumber[$rootScope.atual]] = true;
 		}
-
 	}).
 	config(function($stateProvider) {
   		$stateProvider.state('homeFarmaceutico', {
-  			url:'/farmaceutico',
-    		templateUrl: 'views/farmaceutico/homeFarmaceutico.html',
-    		controller: 'farmaceuticoCtlr'
+			url:'/farmaceutico',
+			views: {
+		        'sidebar-mobile': {
+					templateUrl: 'views/sidebars/homeFarmaceutico.html',
+		    		controller: 'farmaceuticoCtlr'
+				},
+		        'main': {
+					templateUrl: 'views/farmaceutico/homeFarmaceutico.html',
+		    		controller: 'farmaceuticoCtlr'
+				}
+			}
   		}).
   		state('novoPaciente', {
   			url:'/farmaceutico/novoPaciente',
-    		templateUrl: 'views/paciente/novoPaciente.html',
-    		controller: 'farmaceuticoCtlr',
-    		data:{pagina:"Novo Paciente"}
+			views: {
+		        'sidebar-mobile': {
+					templateUrl: 'views/sidebars/novoPaciente.html',
+					controller: 'farmaceuticoCtlr'
+				},
+		        'main': {
+					templateUrl: 'views/paciente/novoPaciente.html',
+		    		controller: 'farmaceuticoCtlr'
+				}
+			}
   		});
 	});
 })
