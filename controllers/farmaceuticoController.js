@@ -1,20 +1,27 @@
 (function(){
 	angular.
 	module('farmaceutico',['ui.router']).
-	controller("farmaceuticoCtlr", function ($scope, $rootScope) {
+	controller("farmaceuticoCtlr", function ($scope, $rootScope, $http) {
 		$rootScope.form={
 			dadosPessoais: true,
-			contato: false
+			endereco:false,
+			contato: false,
+			basico:false
 		};
 		$rootScope.formNumber = {
 			0:'dadosPessoais',
-			1:'contato'
+			1:'endereco',
+			2:'contato',
+			3:'basico'
 		}
+		$rootScope.atual = 0;
+		$scope.campos = {};
 		$scope.formViewSet = function(view){
 			for(var viewPage in $rootScope.form){
 				$rootScope.form[viewPage] = false;
 			}
 			$rootScope.form[view] = true;
+			salvarPaciente();
 		}
 
 		$scope.formView = function(next){
@@ -23,16 +30,29 @@
 				$rootScope.form[viewPage] = false;
 			}
 			if(next == true) {
-				$scope.atual++;
+				$rootScope.atual++;
 			}
 			else{
-				$scope.atual--;
+				$rootScope.atual--;
 			}
 			$rootScope.form[$rootScope.formNumber[$rootScope.atual]] = true;
+			salvarPaciente();
+		}
+
+		function salvarPaciente () {
+
+			$http({
+                method: "POST",
+                url: "http://leozeraduarte-com-br.umbler.net/segfar/api/paciente",
+                data: $scope.campos
+            }).success(function(response){
+            	console.log(response);
+            });
 		}
 	}).
 	config(function($stateProvider) {
-  		$stateProvider.state('homeFarmaceutico', {
+  		$stateProvider.state(
+			'homeFarmaceutico', {
 			url:'/farmaceutico',
 			views: {
 		        'sidebar-mobile': {
@@ -57,7 +77,20 @@
 		    		controller: 'farmaceuticoCtlr'
 				}
 			}
-  		});
+  		}).
+		state('conta',{
+			url:'/farmaceutico/novoPaciente',
+			views: {
+		        'sidebar-mobile': {
+					templateUrl: 'views/sidebars/homeFarmaceutico.html',
+					controller: 'farmaceuticoCtlr'
+				},
+		        'main': {
+					templateUrl: 'views/farmaceutico/dados.html',
+		    		controller: 'farmaceuticoCtlr'
+				}
+			}
+		});
 	});
 })
 ();

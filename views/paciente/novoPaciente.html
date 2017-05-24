@@ -1,6 +1,7 @@
 <div class="row">
 	<ul id="sidebar" class="side-nav fixed">
       <li class="titulo"><h5>Segmento Farmacoterpeutico</h5></li>
+      <li ui-sref="homeFarmaceutico" class="link-menu waves-effect waves-blue block">Área do farmaceutico</li>
       <li class="no-padding">
     		<ul class="collapsible" data-collapsible="accordion" watch>
         		<li>
@@ -8,11 +9,12 @@
             		<div class="no-padding collapsible-body">
                     <ul class="sidebar-menu">
                     	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('dadosPessoais')">Dados pessoais</a></li>
-                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('contato')">Contato</a></li>
-                    	<li class="block waves-effect waves-blue"><a href="#"></a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('endereco')">Endereço</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('basico')">Dados básicos</a></li>
                   	</ul>
                 </div>
         		</li>
+
     		</ul>
       </li>
   	</ul>
@@ -25,33 +27,78 @@
 
 				<div class="input-field col m6 s12">
 					<label for="nomeCompleto">Nome Completo</label>
-					<input id="nomeCompleto" type="text" class="">
+					<input id="nomeCompleto" ng-model="campos.nome" type="text" class="">
+					<input type="hidden" ng-model="campos.id">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="nascimento">E-mail</label>
+					<input type="email" ng-model="campos.email" id="email" class="">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="telefoneResidencial">Telefone residêncial</label>
+					<input type="text" ng-model="campos.telefoneResidencial"  id="telefoneResidencial" name="telefoneResidencial">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="telefoneCeluluar">Telefone Celular</label>
+					<input type="text" ng-model="campos.telefoneCelular" id="telefoneCeluluar" name="telefoneCelular">
 				</div>
 
 				<div class="input-field col m6 s12">
 					<label for="nascimento">Data de nascimento</label>
-					<input type="text" input-date ng-model="nascimento" id="nascimento" class="">
+					<input type="text" input-date ng-model="campos.nascimento" id="nascimento" class="">
 				</div>
 
 				<div class="input-field col m6 s12">
 
-					<select class="" name="raca" material-select id="raca">
+					<select class="" ng-model="campos.etnia" name="etnia" material-select id="etnia">
 						<option value="">Selecione</option>
 						<option value="Branca">Branca</option>
 						<option value="Indígena">Indígena</option>
 						<option value="Negra">Negra</option>
 						<option value="Pardo">Pardo</option>
 					</select>
-					<label for="raca">Raça</label>
+					<label for="raca">Etnia</label>
 				</div>
+
+				<div class="input-field col m6 s12">
+					<select ng-model="escolaridade" name="escolaridade" material-select ng-model="campos.escolaridade" id="escolaridade" type="text">
+						<option value="">Selecione</option>
+						<option value="fundamental">Ensino fundamental completo</option>
+						<option value="medio">Ensino médio completo</option>
+						<option value="superior">Ensino superior completo</option>
+						<option value="n/f">Não frequentou</option>
+					</select>
+					<label for="escolaridade">Escolaridade</label>
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="ocupacao">Ocupação</label>
+					<input type="text" ng-model="ocupacao" ng-model="campos.ocupacao" id="ocupacao" class="">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="rendaFamiliar">Renda familiar</label>
+					<input type="text" ng-model="campos.rendaFamiliar" id="rendaFamiliar" class="">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="rendaFamiliar">Plano de saúde</label>
+					<input type="text" ng-model="campos.planoSaude" id="planoSaude" class="">
+				</div>
+			</div>
+
+			<div ng-show="form['endereco']" class="endereco">
 
 				<div class="input-field col m6 s12">
 					<label for="cep">Cep</label>
-					<input name="cep" id="cep" type="text">
+					<input name="cep" id="cep" ng-model="campos.cep"  type="text">
 				</div>
 
 				<div class="input-field col m6 s12">
-					<select class="estado" name="estado" material-select id="estado">
+					<select class="estado" name="estado" material-select ng-model="campos.estado"  id="estado">
 						<option value="">Selecione</option>
 						<option value="AC">Acre</option>
 						<option value="AL">Alagoas</option>
@@ -85,8 +132,7 @@
 				</div>
 
 				<div class="input-field col m6 s12">
-
-					<select material-select class="" name="cidade" id="cidade">
+					<select material-select class="" name="cidade" ng-model="campos.cidade"  id="cidade">
 						<option value="">Selecione</option>
 						<option value="cidade">Cidade</option>
 					</select>
@@ -95,36 +141,94 @@
 
 				<div class="input-field col m6 s12">
 					<label for="bairro">Bairro</label>
-					<input type="text" name="bairro" id="bairro">
+					<input type="text" name="bairro" ng-model="campos.bairro"  id="bairro">
 				</div>
 
 				<div class="input-field col m6 s12">
 					<label for="rua">Rua</label>
-					<input type="text" id="rua" name="rua">
+					<input type="text" ng-model="campos.rua"  id="rua" name="rua">
 				</div>
-			</div>
-			<div ng-show="form['contato']"  class="contato">
-				<div class="input-field col m6 s12">
-					<label for="telefoneResidencial">Telefone residêncial</label>
-					<input type="text" id="telefoneResidencial" name="telefoneResidencial">
-				</div>
-				<div class="input-field col m6 s12">
-					<label for="telefoneCeluluar">Telefone Celular</label>
-					<input type="text" id="telefoneCeluluar" name="telefoneCeluluar">
-				</div>
-				<div class="input-field col m6 s12">
-					<label for="email">E-mail</label>
-					<input type="text" id="email" name="email">
-				</div>
-			</div>
 
+				<div class="input-field col m6 s12">
+					<label for="numero">Número</label>
+					<input type="text" ng-model="campos.numeroEndereco" id="numero" name="numero">
+				</div>
+
+				<div class="input-field col m12	 s12">
+					<label for="complemento">Complemento</label>
+					<textarea id="complemento" ng-model="campos.complemento" class="materialize-textarea" name="complemento"></textarea>
+				</div>
+			</div>
+			<div ng-show="form['basico']">
+				<div class="input-field col m6 s12">
+					<label for="Altura">Altura</label>
+					<input type="text" ng-model="campos.altura" id="altura">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="peso">Peso</label>
+					<input type="text" ng-model="campos.peso" id="peso">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="imc">IMC</label>
+					<input type="text" ng-model="campos.imc" id="imc">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="pressaoArterial">Pressão arterial</label>
+					<input type="text" ng-model="campos.pressaoArterial" id="pressaoArterial">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="hgt">HGT</label>
+					<input type="text" ng-model="campos.hgt" id="hgt">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="temperatura">Temperatura</label>
+					<input type="text" ng-model="campos.temperatura" id="temperatura">
+				</div>
+
+
+				<div class="input-field col m6 s12">
+					<label for="frequenciaCardiaca">Frequência cardíaca</label>
+					<input type="text" ng-model="campos.frequenciaCardiaca" id="frequenciaCardiaca">
+				</div>
+
+				<div class="input-field col m6 s12">
+					<label for="frequenciaRespiratoria">Frequência respiratória</label>
+					<input type="text" ng-model="campos.frequenciaRespiratoria" id="frequenciaRespiratoria">
+				</div>
+
+				<div class="col m6 s12">
+					<div class="file-field input-field">
+
+				    	<div class="btn blue">
+				    	    <span>Exames</span>
+				        	<input ng-model="campos.examesLaboratoriais" type="file" multiple>
+				        </div>
+
+				      	<div class="file-path-wrapper">
+				        	<input class="file-path validate" type="text" placeholder="Exames laboratoriais">
+				      	</div>
+			    	</div>
+				</div>
+
+			</div>
 		</form>
 
 		<div class="col s12">
 			<div class="right">
 				<button ng-click="formView(false)" ng-disabled="form['dadosPessoais']" class="btn yellow waves-effect waves-light darken-1">Anterior</button>
-				<button ng-click="formView(true)" ng-disabled="form['contato']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>
+				<button ng-click="formView(true)" ng-disabled="form['basico']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>
 			</div>
 		</div>
 	</div>
 </div>
+<!--3.	Sexo (caso seja mulher já pode abrir aba para estado de gravidez, em caso de estar gravida deve abrir aba para questionamento para acompanhamento pré-natal --- mas daí fica a critério de vocês)
+(se possível já calcular idade)
+itens editáveis
+
+11.	Plano de saúde
+-->

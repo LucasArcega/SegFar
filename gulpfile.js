@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
-
 // Html task
 gulp.task('html', function(){
     gulp.src(['*.html', 'views/*.html','views/**/*.html'])
@@ -14,6 +13,12 @@ gulp.task('css', function(){
     gulp.src(['*.css', 'css/*.css'])
         .pipe(reload({stream:true}))
 });
+
+gulp.task('js', function(){
+    gulp.src(['*.js', 'controllers/**/*.js'])
+        .pipe(reload({stream:true}))
+});
+
 
 // Browser task
 gulp.task('browser-sync', function() {

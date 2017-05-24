@@ -5526,12 +5526,12 @@ button.btn-floating {
 
 .side-nav .collapsible-header,
 .side-nav.fixed .collapsible-header {
-  background-color: rgb(0, 177, 245);
+  background-color: rgb(220, 220, 220);
   border: none;
   line-height: inherit;
   height: inherit;
   padding: 0 16px;
-  color: white;
+  color: black;
 }
 
 .side-nav .collapsible-header:hover,

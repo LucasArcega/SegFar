@@ -107,6 +107,16 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 .collapsible-header{
 	color: black;
 }
+.link-menu{
+	padding: 0 16px;
+	display: block;
+}
+
+#pacientes-recentes tr{transition: 0.1s all;}
+#pacientes-recentes tr:hover{
+	background-color: rgba(250, 250, 250, 0.78);
+	box-shadow: rgba(0, 0, 0, 0.28) -2px 5px 7px 0px;
+	color: black;}
 @media (min-width: 993px) {
 	.side-nav{
 		margin-top: 65px;
@@ -116,6 +126,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
 @media (min-width: 993px) {
 	.main{
-		margin-left: 310px !important;
+		margin-left: 339px !important;
 	}
 }
