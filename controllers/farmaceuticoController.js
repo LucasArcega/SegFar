@@ -8,20 +8,25 @@
 			contato: false,
 			basico:false
 		};
-		$rootScope.formNumber = {
-			0:'dadosPessoais',
-			1:'endereco',
-			2:'contato',
-			3:'basico'
-		}
+		$rootScope.formNumber = [
+			'dadosPessoais',
+			'endereco',
+			'medidas',
+			'alergias',
+			'alimentacao',
+			'habitos'
+		]
 		$rootScope.atual = 0;
 		$scope.campos = {};
+
 		$scope.formViewSet = function(view){
+
 			for(var viewPage in $rootScope.form){
 				$rootScope.form[viewPage] = false;
 			}
 			$rootScope.form[view] = true;
-			salvarPaciente();
+			$rootScope.atual = $rootScope.formNumber.indexOf(view);
+			//salvarPaciente();
 		}
 
 		$scope.formView = function(next){
@@ -35,12 +40,15 @@
 			else{
 				$rootScope.atual--;
 			}
-			$rootScope.form[$rootScope.formNumber[$rootScope.atual]] = true;
-			salvarPaciente();
+			$rootScope.form[
+							$rootScope.formNumber[
+										$rootScope.atual
+								]
+						] = true;
+			//salvarPaciente();
 		}
 
 		function salvarPaciente () {
-
 			$http({
                 method: "POST",
                 url: "http://leozeraduarte-com-br.umbler.net/segfar/api/paciente",
@@ -55,6 +63,7 @@
 			'homeFarmaceutico', {
 			url:'/farmaceutico',
 			views: {
+
 		        'sidebar-mobile': {
 					templateUrl: 'views/sidebars/homeFarmaceutico.html',
 		    		controller: 'farmaceuticoCtlr'

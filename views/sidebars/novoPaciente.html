@@ -5,13 +5,15 @@
             <li>
                 <div class="collapsible-header active waves-effect waves-blue" watch>Novo Paciente</div>
                 <div class="no-padding collapsible-body">
-                <ul class="sidebar-menu">
-                    <li class="block waves-effect waves-blue" ng-click="formViewSet('dadosPessoais')"><a >Dados pessoais</a></li>
-                    <li class="block waves-effect waves-blue" ng-click="formViewSet('endereco')"><a>Endereço</a></li>                    
-                    <li class="block waves-effect waves-blue" ng-click="formViewSet('basico')"><a>Dados básicos</a></li>
-                    <li class="block waves-effect waves-blue"><a href="#"></a></li>
-                </ul>
-            </div>
+                    <ul class="sidebar-menu">
+                        <li class="block waves-effect waves-blue"><a ng-click="formViewSet('dadosPessoais')">Dados pessoais</a></li>
+                        <li class="block waves-effect waves-blue"><a ng-click="formViewSet('endereco')">Endereço</a></li>
+                        <li class="block waves-effect waves-blue"><a ng-click="formViewSet('medidas')">Medidas</a></li>
+                        <li class="block waves-effect waves-blue"><a ng-click="formViewSet('alergias')">Alergias</a></li>
+                        <li class="block waves-effect waves-blue"><a ng-click="formViewSet('alimentacao')">Alimentação</a></li>
+                        <li class="block waves-effect waves-blue"><a ng-click="formViewSet('habitos')">Hábitos</a></li>
+                    </ul>
+                </div>
             </li>
         </ul>
   </li>

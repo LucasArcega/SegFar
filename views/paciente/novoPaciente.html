@@ -8,9 +8,12 @@
             		<div class="collapsible-header active waves-effect waves-blue" watch>Novo Paciente</div>
             		<div class="no-padding collapsible-body">
                     <ul class="sidebar-menu">
-                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('dadosPessoais')">Dados pessoais</a></li>
-                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('endereco')">Endereço</a></li>
-                    	<li class="block waves-effect waves-blue"><a ng-click="formViewSet('basico')">Dados básicos</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-class="form['dadosPessoais']?'ativo': '' " ng-click="formViewSet('dadosPessoais')">Dados pessoais</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-class="form['endereco']?'ativo': '' " ng-click="formViewSet('endereco')">Endereço</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-class="form['medidas']?'ativo': '' " ng-click="formViewSet('medidas')">Medidas</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-class="form['alergias']?'ativo': '' " ng-click="formViewSet('alergias')">Alergias</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-class="form['alimentacao']?'ativo': '' " ng-click="formViewSet('alimentacao')">Alimentação</a></li>
+                    	<li class="block waves-effect waves-blue"><a ng-class="form['habitos']?'ativo': '' " ng-click="formViewSet('habitos')">Hábitos</a></li>
                   	</ul>
                 </div>
         		</li>
@@ -159,7 +162,7 @@
 					<textarea id="complemento" ng-model="campos.complemento" class="materialize-textarea" name="complemento"></textarea>
 				</div>
 			</div>
-			<div ng-show="form['basico']">
+			<div ng-show="form['medidas']">
 				<div class="input-field col m6 s12">
 					<label for="Altura">Altura</label>
 					<input type="text" ng-model="campos.altura" id="altura">
@@ -216,19 +219,133 @@
 				</div>
 
 			</div>
+			<div ng-show="form['alergias']">
+
+				<div class="input-field col m12	 s12">
+					<label for="alergias">Possui alergias? Se sim, descreva-as:</label>
+					<textarea id="alergias" ng-model="campos.alergias" class="materialize-textarea" name="alergias"></textarea>
+				</div>
+
+				<div class="input-field col m12	 s12">
+					<label for="reacaoAdversa">Possui alguma reação adversa? Se sim, descreva-a(s):</label>
+					<textarea id="reacaoAdversa" ng-model="campos.qualReacao" class="materialize-textarea" name="reacaoAdversa"></textarea>
+				</div>
+
+			</div>
+
+			<div ng-show="form['alimentacao']">
+				<div class="input-field col m6 s12">
+					<select material-select class="" name="restricaoDietetica" ng-model="campos.restricaoDietetica"  id="restricaoDietetica">
+						<option value="">Selecione</option>
+						<option value="restricaoDietetica">Sim</option>
+						<option value="restricaoDietetica">Não</option>
+					</select>
+					<label for="restricaoDietetica">Restrição dietética?</label>
+				</div>
+				<div class="input-field col m12	 s12">
+					<label for="qualRestricao">Qual restricão diétetica ?</label>
+					<textarea id="qualRestricao" ng-model="campos.qualRestricao" class="materialize-textarea" name="qualRestricao"></textarea>
+				</div>
+
+				<div class="input-field col m12	 s12">
+					<label for="refeicaoDiaria">Quantas refeições faz diariamente ?</label>
+					<textarea id="refeicaoDiaria" ng-model="campos.refeicaoDiaria" class="materialize-textarea" name="refeicaoDiaria"></textarea>
+				</div>
+
+				<div class="input-field col m6 s12">
+					<select material-select class="" name="suplementos" ng-model="campos.suplementos"  id="suplementos">
+						<option value="">Selecione</option>
+						<option value="suplementos">Sim</option>
+						<option value="suplementos">Não</option>
+					</select>
+					<label for="suplementos">Usa suplementos alimentares ?</label>
+				</div>
+				<div class="input-field col m12	 s12">
+					<label for="qualSuplemento">Qual Suplementos ?</label>
+					<textarea id="qualSuplemento" ng-model="campos.qualSuplemento" class="materialize-textarea" name="qualSuplemento"></textarea>
+				</div>
+
+				<div class="input-field col m6 s12">
+					<select material-select class="" name="estimulante" ng-model="campos.estimulante"  id="estimulante">
+						<option value="">Selecione</option>
+						<option value="estimulante">Sim</option>
+						<option value="estimulante">Não</option>
+					</select>
+					<label for="estimulante">Usa estimulante ou supressor de apetite ?</label>
+				</div>
+				<div class="input-field col m12	 s12">
+					<label for="qualEstimulante">Qual estimulante ?</label>
+					<textarea id="qualEstimulante" ng-model="campos.qualEstimulante" class="materialize-textarea" name="qualEstimulante"></textarea>
+				</div>
+
+				<div class="col m6 s12">
+					<div class="file-field input-field">
+			    	</div>
+				</div>
+			</div>
+
+
+
+
+
+
+      <div ng-show="form['habitos']">
+				<div class="input-field col m6 s12">
+					<select material-select class="" name="exercicios" ng-model="campos.exercicios"  id="exercicios">
+						<option value="">Selecione</option>
+						<option value="exercicios">Sim</option>
+						<option value="exercicios">Não</option>
+					</select>
+					<label for="exercicios">Pratica exércicios ?</label>
+				</div>
+				<div class="input-field col m12	 s12">
+					<label for="qualExercicio">Qual Exercicios ?</label>
+					<textarea id="qualExercicio" ng-model="campos.qualExercicio" class="materialize-textarea" name="qualExercicio"></textarea>
+				</div>
+
+				<div class="input-field col m12	 s12">
+					<label for="frequenciaExercicio">Qual frequencia ?</label>
+					<textarea id="frequenciaExercicio" ng-model="campos.frequenciaExercicio" class="materialize-textarea" name="frequenciaExercicio"></textarea>
+				</div>
+
+				<div class="input-field col m6 s12">
+					<select material-select class="" name="suplementos" ng-model="campos.suplementos"  id="suplementos">
+						<option value="">Selecione</option>
+						<option value="suplementos">Sim</option>
+						<option value="suplementos">Não</option>
+					</select>
+					<label for="suplementos">Usa suplementos alimentares ?</label>
+				</div>
+				<div class="input-field col m12	 s12">
+					<label for="qualSuplemento">Qual Suplementos ?</label>
+					<textarea id="qualSuplemento" ng-model="campos.qualSuplemento" class="materialize-textarea" name="qualSuplemento"></textarea>
+				</div>
+
+				<div class="input-field col m6 s12">
+					<select material-select class="" name="estimulante" ng-model="campos.estimulante"  id="estimulante">
+						<option value="">Selecione</option>
+						<option value="estimulante">Sim</option>
+						<option value="estimulante">Não</option>
+					</select>
+					<label for="estimulante">Usa estimulante ou supressor de apetite ?</label>
+				</div>
+				<div class="input-field col m12	 s12">
+					<label for="qualEstimulante">Qual estimulante ?</label>
+					<textarea id="qualEstimulante" ng-model="campos.qualEstimulante" class="materialize-textarea" name="qualEstimulante"></textarea>
+				</div>
+
+				<div class="col m6 s12">
+					<div class="file-field input-field">
+			    	</div>
+				</div>
+			</div>
 		</form>
 
 		<div class="col s12">
 			<div class="right">
 				<button ng-click="formView(false)" ng-disabled="form['dadosPessoais']" class="btn yellow waves-effect waves-light darken-1">Anterior</button>
-				<button ng-click="formView(true)" ng-disabled="form['basico']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>
+				<button ng-click="formView(true)" ng-disabled="form['habitos']" class="btn yellow waves-light darken-1 waves-effect">Próximo</button>
 			</div>
 		</div>
 	</div>
 </div>
-<!--3.	Sexo (caso seja mulher já pode abrir aba para estado de gravidez, em caso de estar gravida deve abrir aba para questionamento para acompanhamento pré-natal --- mas daí fica a critério de vocês)
-(se possível já calcular idade)
-itens editáveis
-
-11.	Plano de saúde
--->
